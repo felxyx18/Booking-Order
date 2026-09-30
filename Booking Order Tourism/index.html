@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sarawak Tour Booking System</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<!-- Home Page -->
+<div data-role="page" id="home" data-theme="a">
+    <div data-role="header"><h1>Sarawak Tour</h1></div>
+    <div data-role="content">
+        <p>Welcome to the official Sarawak Tour Booking System.</p>
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#packages" data-transition="slide">View Tour Packages</a></li>
+            <li><a href="#booking" data-transition="slide">Booking</a></li>
+            <li><a href="#contact" data-transition="slide">Contact Us</a></li>
+        </ul>
+    </div>
+     <div data-role="footer" data-theme="b">
+        <h4>&copy; 2026 Sarawak Tour Booking System</h4>
+    </div>
+</div>
+
+<!-- Packages Page -->
+<div data-role="page" id="packages">
+    <div data-role="header">
+        <a href="#home" data-icon="home" data-iconpos="notext">Home</a>
+        <h1>Tour Packages</h1>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#home" data-icon="home">Home</a></li>
+            <li><a href="#booking" data-icon="calendar">Booking</a></li>
+            <li><a href="#contact" data-icon="mail">Contact</a></li>
+        </ul>
+    </div>
+
+    <div data-role="content">
+        <ul data-role="listview" data-inset="true">
+            <li>
+                <a href="#popup1" data-rel="popup" data-transition="pop">
+                    <img src="img/image 1.jpg" alt="Bengoh"> <!-- Replace with your image path -->
+                    <h2>Bengoh Dam</h2>
+                    <p>Bengoh Dam, located about 45 km from Kuching in Padawan, Sarawak, is both a vital water reservoir and a hidden eco‑tourism gem. It’s best known as the gateway to stunning waterfalls like
+                       Curtain, Pe’an, and Susung, and the nearby Bidayuh village Kampung Sting, which offers homestays and cultural experiences.</p>
+                </a>
+            </li>
+            <li>
+                <a href="#popup2" data-rel="popup" data-transition="pop">
+                    <img src="img/image 4.jpg" alt="Semenggoh">
+                    <h2>Semenggoh Wildlife</h2>
+                    <p>Semenggoh Wildlife Centre, just 24 km south of Kuching, is Sarawak’s most famous orangutan rehabilitation reserve, where around 30–40 semi‑wild orangutans roam freely in 650 hectares of rainforest. The best time to visit is during the daily feeding sessions (9–10 AM and 3–4 PM), when sightings are most likely. </p>
+                </a>
+            </li>
+            <li>
+                <a href="#popup3" data-rel="popup" data-transition="pop">
+                    <img src="img/image 6.jpg" alt="Bako">
+                    <h2>Bako National Park</h2>
+                    <p>Bako National Park is one of Sarawak’s most iconic destinations — and the oldest national park in the state, gazetted in 1957. Despite its small size (about 27 sq km), it packs in an incredible diversity of landscapes and wildlife.</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div data-role="footer" data-theme="b">
+        <h4>&copy; 2026 Sarawak Tour Booking System</h4>
+    </div>
+
+    <!-- Popovers -->
+    <div data-role="popup" id="popup1" class="ui-content"><p>2 Days, 1 Nights</p><p>RM250</p></div>
+    <div data-role="popup" id="popup2" class="ui-content"><p>3 Days, 2 Nights</p><p>RM360</p></div>
+    <div data-role="popup" id="popup3" class="ui-content"><p>4 Days, 3 Nights</p><p>RM450</p></div>
+</div>
+
+
+<!-- Booking Page -->
+<div data-role="page" id="booking">
+    <div data-role="header">
+        <!-- Home Button added here -->
+        <a href="#home" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse">Home</a>
+        <h1>Booking</h1>
+    </div>
+    
+    <div data-role="content">
+        <form id="bookingForm" data-ajax="false">
+            <label for="bName">Full Name:</label>
+            <input type="text" name="bName" id="bName" placeholder="Enter your name..." required>
+            
+            <label for="bPhone">Phone Number:</label>
+            <input type="tel" name="bPhone" id="bPhone" placeholder="019****" required>
+            
+            <label for="bEmail">Email:</label>
+            <input type="email" name="bEmail" id="bEmail" placeholder="admin12@gmail.com"required>
+
+            <label for="bookingDate">Select Date:</label>
+            <input type="date" name="bookingDate" id="bookingDate" required>
+            
+            <label for="bPackage">Select Package:</label>
+            <select name="bPackage" id="bPackage">
+                <option value="Bako">Bengoh Dam RM250</option>
+                <option value="Semenggoh">Semenggoh Wildlife RM360</option>
+                <option value="Cultural">Bako National Park RM450</option>
+            </select>
+            
+           <!-- The Button -->
+<a href="#popupConfirm" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow">Confirm Booking</a>
+
+<!-- The Popup Container -->
+<div data-role="popup" id="popupConfirm" data-theme="a" class="ui-content" style="max-width:280px;">
+    <h3>Booking Confirmed!</h3>
+    <p>Your tour has been successfully booked.</p>
+    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow">Close</a>
+</div>
+        </form>
+    </div>
+     <div data-role="footer" data-theme="b">
+        <h4>&copy; 2026 Sarawak Tour Booking System</h4>
+    </div>
+</div>
+
+
+
+<!-- Contact Page (Modal-based Form) -->
+<div data-role="page" id="contact">
+    <div data-role="header"><a href="#home" data-icon="home">Home</a><h1>Contact Us</h1></div>
+    <div data-role="content">
+        <form id="contactForm">
+            <label>Full Name:</label><input type="text" id="cName" placeholder="Enter your name..." required>
+            <label>Email:</label><input type="email" id="cEmail" placeholder="admin123@gmail.com" required>
+            <label>Message:</label><textarea id="cMsg" placeholder="Message..." required></textarea>
+            <label><input type="checkbox" id="cConsent"> I consent to the privacy policy.</label>
+            <button type="submit" data-theme="b">Send Message</button>
+        </form>
+        <div id="errorBox" style="color:red; margin-top:10px;"></div>
+    </div>
+     <div data-role="footer" data-theme="b">
+        <h4>&copy; 2026 Sarawak Tour Booking System</h4>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
